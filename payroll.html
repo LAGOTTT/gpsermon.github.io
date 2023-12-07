@@ -160,21 +160,30 @@
             displayPayroll();
         }
 
-        function deleteEmployee() {
-            var lineNumberToDelete = prompt("Enter the Line Number to delete:");
+    function openDeleteConfirmation(indexToDelete) {
+        var dialog = document.getElementById("deleteConfirmation");
+        dialog.showModal();
 
-            if (lineNumberToDelete !== null) {
-                var indexToDelete = parseInt(lineNumberToDelete) - 1;
+        // Set data-index attribute to store the index of the employee to delete
+        dialog.setAttribute("data-index", indexToDelete);
+    }
 
-                if (indexToDelete >= 0 && indexToDelete < payrollList.length) {
-                    payrollList.splice(indexToDelete, 1);
-                    displayPayroll();
-                } else {
-                    alert("Invalid Line Number");
-                }
-            }
+         function confirmDelete() {
+        var dialog = document.getElementById("deleteConfirmation");
+        var indexToDelete = parseInt(dialog.getAttribute("data-index"));
+
+        if (!isNaN(indexToDelete) && indexToDelete >= 0 && indexToDelete < payrollList.length) {
+            payrollList.splice(indexToDelete, 1);
+            displayPayroll();
         }
 
+        dialog.close();
+    }
+
+    function cancelDelete() {
+        var dialog = document.getElementById("deleteConfirmation");
+        dialog.close();
+    }
         function displayPayroll() {
             var payrollBody = document.getElementById("payrollBody");
             payrollBody.innerHTML = "";
