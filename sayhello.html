@@ -1,27 +1,61 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Hello!</title>
+    <title>Hello!</title>
+    <style>
+        body {
+            margin: 0; /* Remove default margin to fill the entire viewport */
+            background-image: url('https://tenor.com/view/purple-space-gif-18483437.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white; /* Set text color to white */
+            text-align: center; /* Center-align the text */
+            display: flex;
+            flex-direction: column; /* Adjust the flex direction to column */
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make sure the body takes up the full height of the viewport */
+        }
+
+        h1 {
+            color: white; /* Set text color to white for the h1 outside the container */
+        }
+
+        .container {
+            background-color: #250140; /* Change the background color of the container */
+            border: 2px solid white; /* Add a white border to the container */
+            border-radius: 10px; /* Give the container rounded edges */
+            padding: 20px; /* Add some padding for spacing */
+        }
+
+        /* Additional styling for the form and links */
+        form, a {
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
 <h1>This page says hello!</h1>
+
+<div class="container">
     <form>
-  <label for="fname">So what's your name?</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <button onclick="sayhello()">Hi</button>
-<br>
-<h2 id="hello"></h2>
-<br>
-<a href="index.html">Back to Home Page</a>
-<br>
+        <label for="fname">So what's your name?</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <button onclick="sayhello()">Hi</button>
+    </form>
+    <h2 id="hello"></h2>
+    <a href="index.html">Back to Home Page</a>
+</div>
+
 <script>
-function sayhello()
-{
-  var name;
-  name = document.getElementById("fname").value;
-  document.getElementById("hello").innerHTML='Hello ' +name;
-}
-    </script>
+    function sayhello() {
+        var name;
+        name = document.getElementById("fname").value;
+        document.getElementById("hello").innerHTML = 'Hello ' + name;
+    }
+</script>
+
 </body>
 </html>
