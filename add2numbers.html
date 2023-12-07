@@ -1,38 +1,80 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Addition for 2 Numbers</title>
+    <title>Addition for 2 Numbers</title>
+    <style>
+        body {
+            background-image: url('https://tenor.com/view/purple-space-gif-18483437.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        #sumlabel {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1> This Page adds 2 Numbers! </h1>
-    <br>
-    <label for="n1">First Number</label> 
-    <input id="n1" name="n1" type="number" onkeyup="computesum()">
-    <label for="n2">Second Number</label> 
-    <input id="n2" name="n2" type="number" onkeyup="computesum()">
-    <br>
-    <br>
-    <br>
-    <label for="sum" id="sumlabel">Waiting for input...</label> 
-    <br> 
-    <input id="sum" name="sum" type="number" readonly></input></p>
-    <br>
-    <br>
-    <a href="index.html">Back to Home Page</a>
+
+<h1>This Page Adds 2 Numbers!</h1>
+<br>
+<label for="n1">First Number</label>
+<input id="n1" name="n1" type="number" onkeyup="computesum()">
+<label for="n2">Second Number</label>
+<input id="n2" name="n2" type="number" onkeyup="computesum()">
+<br>
+<br>
+<br>
+<label for="sum" id="sumlabel">Waiting for input...</label>
+<br>
+<input id="sum" name="sum" type="number" readonly>
+<br>
+<br>
+<a href="INDEX.html">Back to Home Page</a>
+
 <script>
-    function computesum(){
-    var a,b;
+    function computesum() {
+        var a, b;
 
-    a = document.getElementById("n1").value*1;
-    b = document.getElementById("n2").value*1;
+        a = document.getElementById("n1").value * 1;
+        b = document.getElementById("n2").value * 1;
 
-    let c  = a+b;
+        let c = a + b;
 
-
-    document.getElementById("sumlabel").innerHTML='The sum of '
-    +a+' and '+b+' is:';
-    document.getElementById("sum").value=c;
+        document.getElementById("sumlabel").innerHTML = 'The sum of ' + a + ' and ' + b + ' is:';
+        document.getElementById("sum").value = c;
     }
-    </script>
+</script>
 </body>
 </html>
