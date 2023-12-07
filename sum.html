@@ -2,37 +2,76 @@
 <html>
 <head>
     <title>Sum of First 'n' Natural Numbers</title>
+    <style>
+        body {
+            background-image: url('https://tenor.com/view/purple-space-gif-18483437.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h3 {
+            color: white;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Sum of First 'n' Natural Numbers</h1>
-    <br>
-    <h3>This page calculates the sum of the first 'n' natural numbers using a do-while loop.</h3>
-    <br>
-    <label for="n">Enter a number (n):</label> 
-    <input id="n" name="n" type="number" oninput="calculateSum()">
-    <br>
-    <label for="result">Sum:</label>
-    <input id="result" name="result" type="number" readonly>
-    <br>
-    <br>
-    <a href="index.html">Back to Home Page</a>
 
-    <script>
-        function calculateSum() {
-            var n = document.getElementById("n").value;
+<h1>Sum of First 'n' Natural Numbers</h1>
+<br>
+<h3>This page calculates the sum of the first 'n' natural numbers using a do-while loop.</h3>
+<br>
 
-            if (Number.isInteger(+n) && +n >= 0) {
-                var sum = 0;
-                var i = 1;
+<label for="n">Enter a number (n):</label>
+<input id="n" name="n" type="number" oninput="calculateSum()">
+<br>
+<label for="result">Sum:</label>
+<input id="result" name="result" type="number" readonly>
+<br>
+<br>
+<a href="index.html">Back to Home Page</a>
 
-                do {
-                    sum += i;
-                    i++;
-                } while (i <= +n);
+<script>
+    function calculateSum() {
+        var n = document.getElementById("n").value;
 
-                document.getElementById("result").value = sum;
-            }
+        if (Number.isInteger(+n) && +n >= 0) {
+            var sum = 0;
+            var i = 1;
+
+            do {
+                sum += i;
+                i++;
+            } while (i <= +n);
+
+            document.getElementById("result").value = sum;
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
