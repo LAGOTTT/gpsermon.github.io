@@ -166,15 +166,21 @@
             displayPayroll();
         }
 
-    function openDeleteConfirmation(indexToDelete) {
-        var dialog = document.getElementById("deleteConfirmation");
-        dialog.showModal();
+    function deleteEmployee() {
+        var lineNumberToDelete = prompt("Enter the Line Number to delete:");
 
-        // Set data-index attribute to store the index of the employee to delete
-        dialog.setAttribute("data-index", indexToDelete);
+        if (lineNumberToDelete !== null) {
+            var indexToDelete = parseInt(lineNumberToDelete) - 1;
+
+            if (indexToDelete >= 0 && indexToDelete < payrollList.length) {
+                openDeleteConfirmation(indexToDelete);
+            } else {
+                alert("Invalid Line Number");
+            }
+        }
     }
 
-         function confirmDelete() {
+    function confirmDelete() {
         var dialog = document.getElementById("deleteConfirmation");
         var indexToDelete = parseInt(dialog.getAttribute("data-index"));
 
