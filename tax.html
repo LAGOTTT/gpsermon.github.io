@@ -1,47 +1,105 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Income Tax Calculator</title>
+    <style>
+        body {
+            background-image: url('https://tenor.com/view/purple-space-gif-18483437.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h3 {
+            color: white;
+        }
+
+        .box {
+            background-color: #250140;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Income Tax Calculator</h1>
-    <br>
-    <h3>This page computes the income tax from your taxable income.</h3>
-    <br>
 
+<h1>Income Tax Calculator</h1>
+<br>
+<h3>This page computes the income tax from your taxable income.</h3>
+<br>
+
+<div class="box">
     <label for="taxableIncome">Taxable Income:</label>
     <input type="number" id="taxableIncome">
 
     <button onclick="calculateIncomeTax()">Calculate Income Tax</button>
     <br>
     <p id="incomeTaxResult"></p>
-    <br>
-    <br>
-    <a href="index.html">Back to Home Page</a>
+</div>
 
-    <script>
-        function calculateIncomeTax() {
-            var taxableIncome = parseFloat(document.getElementById("taxableIncome").value);
-            var incomeTax = 0;
+<br>
+<a href="index.html">Back to Home Page</a>
 
-            if (taxableIncome <= 0) {
-                incomeTax = 0;
-            } else if (taxableIncome <= 250000) {
-                incomeTax = 0;
-            } else if (taxableIncome <= 400000) {
-                incomeTax = 0.2 * (taxableIncome - 250000);
-            } else if (taxableIncome <= 800000) {
-                incomeTax = 30000 + 0.25 * (taxableIncome - 400000);
-            } else if (taxableIncome <= 2000000) {
-                incomeTax = 130000 + 0.3 * (taxableIncome - 800000);
-            } else if (taxableIncome <= 8000000) {
-                incomeTax = 490000 + 0.32 * (taxableIncome - 2000000);
-            } else {
-                incomeTax = 2410000 + 0.35 * (taxableIncome - 8000000);
-            }
+<script>
+    function calculateIncomeTax() {
+        var taxableIncome = parseFloat(document.getElementById("taxableIncome").value);
+        var incomeTax = 0;
 
-            document.getElementById("incomeTaxResult").innerHTML = "Income Tax: $" + incomeTax.toFixed(2);
+        if (taxableIncome <= 0) {
+            incomeTax = 0;
+        } else if (taxableIncome <= 250000) {
+            incomeTax = 0;
+        } else if (taxableIncome <= 400000) {
+            incomeTax = 0.2 * (taxableIncome - 250000);
+        } else if (taxableIncome <= 800000) {
+            incomeTax = 30000 + 0.25 * (taxableIncome - 400000);
+        } else if (taxableIncome <= 2000000) {
+            incomeTax = 130000 + 0.3 * (taxableIncome - 800000);
+        } else if (taxableIncome <= 8000000) {
+            incomeTax = 490000 + 0.32 * (taxableIncome - 2000000);
+        } else {
+            incomeTax = 2410000 + 0.35 * (taxableIncome - 8000000);
         }
-    </script>
+
+        document.getElementById("incomeTaxResult").innerHTML = "Income Tax: $" + incomeTax.toFixed(2);
+    }
+</script>
+
 </body>
 </html>
