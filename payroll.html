@@ -15,7 +15,7 @@
         td:nth-child(odd) {
             border: 1px solid #ffffff;
             background-color: #250140;
-            text-align: left;
+            text-align: right;
             color: white;
             padding: 8px;
         }
@@ -23,7 +23,7 @@
         td:nth-child(even) {
             border: 1px solid #ffffff;
             background-color: #1f0252;
-            text-align: left;
+            text-align: right;
             color: white;
             padding: 8px;
         }
@@ -31,7 +31,7 @@
         th {
             border: 1px solid #ffffff;
             background-color: #E1007E;
-            text-align: left;
+            text-align: center;
             color: white;
             padding: 8px;
         }
@@ -289,7 +289,7 @@
                 cellNo.innerHTML = i + 1;
                 cellName.innerHTML = payrollEntry.employeeName;
                 cellDays.innerHTML = payrollEntry.daysWorked;
-                cellRate.innerHTML = payrollEntry.dailyRate.toFixed(2);
+                cellRate.innerHTML = '$ ' + payrollEntry.dailyRate.toFixed(2);
                 cellGross.innerHTML = '$ ' + payrollEntry.grossPay.toFixed(2);
                 cellDeduction.innerHTML = '$ ' + payrollEntry.deductionAmount.toFixed(2);
                 cellNet.innerHTML = '$ ' + payrollEntry.netPay.toFixed(2);
